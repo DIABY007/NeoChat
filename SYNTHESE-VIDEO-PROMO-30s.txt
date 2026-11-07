@@ -1,0 +1,344 @@
+====================================================================
+  NEOCHAT — SYNTHÈSE VOCABULAIRE POUR VIDÉO PROMOTIONNELLE (30s)
+  Document extrait du code source et de la documentation produit
+  Généré le 7 avril 2026
+====================================================================
+
+
+--------------------------------------------------------------
+1. LANDING PAGE — Proposition de valeur & promesse phare
+--------------------------------------------------------------
+
+H1 EXACT (page d'accueil) :
+  « Transformez WhatsApp en Machine de Vente Automatique 24/7 »
+
+SOUS-TITRE :
+  « NeoChat combine un bot IA intelligent et des campagnes marketing
+    anti-spam pour transformer chaque conversation WhatsApp en
+    opportunité de vente. »
+
+TRUST SIGNAL (sous le H1) :
+  « Essai gratuit 3 jours • Sans carte bancaire • Annulation en 1 clic »
+
+BADGE ACCROCHEUR :
+  « Nouveau : L'IA au service de votre business »
+
+SOCIAL PROOF :
+  - « +500 entrepreneurs nous font confiance »
+  - « 50 000+ messages automatisés ce mois »
+  - « Fait, pour l'Afrique »
+
+ELEVATOR PITCH (doc marketing) :
+  « NeoChat transforme ton WhatsApp en employé qui vend, répond
+    et prospecte 24h/24 — sans salaire, sans congé, sans erreur. »
+
+SECTION PROBLÈME :
+  « Vous Perdez des Clients à Cause de Ces Problèmes ? »
+  « Vos clients détestent attendre. WhatsApp déteste le spam.
+    NeoChat résout les deux. »
+
+SECTION FONCTIONNALITÉS :
+  « Tout Ce Dont Vous Avez Besoin Pour Dominer WhatsApp »
+  « Une suite complète d'outils pour automatiser vos ventes
+    et votre support client »
+
+CTA FINAL (section orange) :
+  « Prêt à Transformer Votre WhatsApp en Machine de Vente Automatique ? »
+  « Rejoignez +500 entrepreneurs qui vendent plus grâce à NeoChat. »
+
+FOOTER :
+  « Votre assistant WhatsApp intelligent »
+  « Fait avec ❤️ pour l'Afrique »
+
+MOTS-CLÉS PERCUTANTS DE LA LANDING :
+  Machine de Vente, Automatique, 24/7, anti-spam, bot IA intelligent,
+  opportunité de vente, Dominer WhatsApp, ventes automatiques
+
+
+--------------------------------------------------------------
+2. CONNEXION WHATSAPP — Vocabulaire de liaison du compte
+--------------------------------------------------------------
+
+TERMES EXACTS UTILISÉS DANS L'INTERFACE :
+
+  - « Connecter WhatsApp » (titre CTA dashboard)
+  - « Créer une instance WhatsApp » (titre du formulaire)
+  - « Nouvelle instance » (bouton)
+  - « Créer ma première instance » (bouton état vide)
+  - « Créer l'instance » (bouton submit)
+
+MÉTHODES DE CONNEXION (onglets toggle) :
+  - « Code de connexion (Mobile) » — méthode principale
+  - « QR Code (PC) » — méthode alternative
+
+FLOW CODE DE JUMELAGE :
+  - « Connexion par numéro »
+  - « Entrez votre numéro WhatsApp pour recevoir un code de connexion »
+  - « Générer le code de connexion » (bouton)
+  - « Votre code de connexion WhatsApp » (titre affiché)
+  - « Code de jumelage » / « Code de connexion » (les deux termes coexistent)
+  - « Préparation de la connexion... » (toast loading)
+  - « Code de connexion généré ! » (toast succès)
+  - « Ce code expire dans Xs — un nouveau code sera généré automatiquement »
+  - « Copier » / « Rafraîchir » (boutons sous le code)
+
+INSTRUCTIONS AFFICHÉES À L'UTILISATEUR :
+  1. « Ouvrez WhatsApp sur votre téléphone »
+  2. « Allez dans Réglages → Appareils connectés »
+  3. « Appuyez sur "Connecter un appareil" puis "Connecter avec
+      le numéro de téléphone à la place" »
+  4. « Saisissez ce code à 8 caractères »
+
+FLOW QR CODE :
+  - « Scanner le QR Code »
+  - « Scannez ce code avec WhatsApp sur votre téléphone »
+
+STATUTS :
+  - « Connecté » / « En attente de scan... » / « Déconnecté »
+  - « Instance connectée avec succès ! » (toast)
+
+PROMESSE MARKETING (doc) :
+  « Connecte ton numéro WhatsApp en 30 secondes »
+
+
+--------------------------------------------------------------
+3. PROGRAMMATION — Messages & Statuts
+--------------------------------------------------------------
+
+TITRE DE LA PAGE :
+  « Diffusion »
+  « Campagnes marketing & statuts WhatsApp automatisés »
+
+DEUX ONGLETS PRINCIPAUX :
+  - « Messages Directs » — « Envoyez des campagnes à vos contacts et groupes »
+  - « Statuts Automatiques » (badge « Nouveau ✨ ») —
+    « Programmez vos stories WhatsApp sans risque »
+
+TERMES DE CAMPAGNE :
+  - « Nouvelle campagne » / « Modifier la campagne »
+  - « Nom de la campagne »
+  - « Instance WhatsApp »
+  - « Contenu du message (Variations Anti-Spam) »
+  - « Programmation des envois » (feature pricing)
+  - « Envoi programmé » (feature pricing)
+  - « Destinataires »
+  - « Campagnes marketing illimitées »
+  - « Campagnes illimitées »
+
+SPINTAX (système anti-ban) :
+  - « Variations anti-spam automatiques »
+  - « Variez vos messages automatiquement »
+  - « Comment éviter les blocages WhatsApp ? »
+  - « Chaque destinataire recevra une variation unique du message »
+  - « Système anti-spam avec variations de messages »
+
+STATUTS D'UNE CAMPAGNE :
+  - « En attente » / « En cours » / « En traitement »
+  - « Terminée » / « Échouée » / « En pause »
+
+ACTIONS SUR CAMPAGNE :
+  - Dupliquer / Modifier / Supprimer / Pause / Reprendre
+
+CTA DASHBOARD :
+  - « Créer une Campagne » (titre card)
+  - « Lancer ma campagne » (lien)
+  - « Envoyez des messages groupés à vos contacts »
+
+MOTS-CLÉS PERCUTANTS :
+  Diffusion, Campagnes, Programmation, Envoi programmé,
+  Anti-spam, Variations automatiques, Statuts Automatiques,
+  Stories WhatsApp, Diffusion de masse à 1000+ contacts en un clic
+
+
+--------------------------------------------------------------
+4. ASSISTANT IA — Vocabulaire de l'intelligence artificielle
+--------------------------------------------------------------
+
+NOMS UTILISÉS DANS L'APP :
+  - « Assistant IA Ultra-Intelligent » (titre card landing)
+  - « Assistant IA » (nom du plan)
+  - « Bot IA 24/7 » (page inscription)
+  - « Bot IA conversationnel » (pricing)
+  - « Bot IA automatique » (pricing)
+  - « Bot IA intelligent » (sous-titre landing)
+  - « 🤖 Bot Activé » / « ⏸️ Bot Désactivé » (toggle dans l'app)
+  - « Comportement & Activation » (titre carte config)
+  - « Paramétrez votre assistant IA » (sous-titre)
+  - « Documents IA » (dashboard stats)
+
+PROMESSES MARKETING :
+  - « Réponses instantanées (< 2 secondes) »
+  - « Réponses automatiques 24/7 »
+  - « Ne manquez plus aucune vente, même pendant votre sommeil »
+  - « Le bot répond automatiquement aux messages WhatsApp »
+  - « Votre bot apprend depuis vos documents (PDF, Texte) et répond
+      automatiquement à vos clients comme si c'était vous.
+      Disponible 24/7, même à 3h du matin. »
+  - « Ventes automatiques 24/7, même pendant votre sommeil »
+  - « IA formée sur vos produits/services (PDF/Texte) »
+
+BASE DE CONNAISSANCES :
+  - « Base de connaissances personnalisée »
+  - « Base de connaissances (PDF/Texte) »
+  - « Apprentissage depuis vos PDF/Textes »
+  - « Ajouter un document » / « Vectoriser et Ajouter »
+  - « Upload ton catalogue PDF et ton bot connaît instantanément
+      tous tes produits, prix et conditions »
+
+CONFIGURATION :
+  - « Prompt Système » — « Définissez le comportement de votre bot IA »
+  - « Ton de voix personnalisable »
+  - « Personnalisation de l'IA »
+  - « Enregistrer la configuration »
+
+BLACKLIST :
+  - « Blacklist » — « Numéros ignorés par le bot »
+  - « Sauvegarder la blacklist »
+
+TERMES MARKETING (doc) :
+  - « Le Cerveau IA »
+  - « Agent conversationnel intelligent »
+  - « Automatisation des réponses clients »
+  - « Ventes automatiques 24/7 — Aucune vente perdue la nuit »
+  - « Le bot traite chaque conversation comme un vendeur formé »
+  - « Zéro hallucination commerciale »
+
+MOTS-CLÉS PERCUTANTS :
+  Assistant IA, Bot IA 24/7, Réponses instantanées,
+  Ventes automatiques, Base de connaissances, Upload PDF,
+  Comme si c'était vous, Même à 3h du matin
+
+
+--------------------------------------------------------------
+5. AFFILIATION — Système de récompense
+--------------------------------------------------------------
+
+NOM DE LA SECTION :
+  - « 🌟 Espace Ambassadeur » (titre page partner)
+  - « Programme d'Affiliation » (titre CTA dashboard)
+  - « Programme Ambassadeur » (section dashboard)
+
+PROMESSE PRINCIPALE :
+  - « Parrainez et gagnez des commissions »
+  - « Partagez et gagnez 20% de commission »
+  - « Parrainez vos amis et gagnez des récompenses »
+
+VOCABULAIRE EXACT DE L'INTERFACE :
+  - « Votre code de parrainage »
+  - « Lien de parrainage »
+  - « Personnaliser mon code »
+  - « Code parrain (optionnel) » (inscription)
+  - « Pour bénéficier des bonus ambassadeur » (inscription)
+  - « Copier » / « Partager sur WhatsApp »
+  - « Votre Lien de Parrainage »
+  - « Votre cagnotte » / « Votre Cagnotte »
+  - « Gains accumulés »
+  - « Parrainages » / « Ce mois-ci » / « Total gagné »
+  - « Vos Filleuls »
+  - « Partagez votre code pour commencer à gagner ! »
+  - « Découvrir le programme »
+
+MÉCANIQUE EXPLIQUÉE DANS L'APP :
+  1. « Partagez votre lien »
+  2. « Ils s'inscrivent » — « Vos filleuls créent leur compte avec votre code »
+  3. « Ils s'abonnent » — « Vos filleuls souscrivent à un abonnement
+      avec 10% de remise »
+  4. « Vous gagnez 20% » — « Recevez 20% de commission chaque mois
+      tant qu'ils restent abonnés »
+
+ENCARTS MARKETING :
+  - « Avantage filleul : Vos filleuls bénéficient de 10% de remise
+      sur tous leurs abonnements ! »
+  - « Commission récurrente : Gagnez 20% chaque mois tant que
+      votre filleul reste abonné »
+  - « Réduction de 1 000 FCFA avec un code parrain »
+
+MESSAGE WHATSAPP PRÉ-REMPLI :
+  « Rejoins-moi sur NeoChat avec mon code de parrainage [CODE]
+    et bénéficie d'une réduction de 1000 FCFA ! 🎉 »
+
+VIREMENTS :
+  - « Historique des virements »
+  - « Virements automatiques tous les lundis »
+  - « Informations de paiement — Pour recevoir vos virements automatiques »
+  - Orange Money / Wave / Virement bancaire
+
+MOTS-CLÉS PERCUTANTS :
+  Ambassadeur, Parrainage, Commission 20%, Cagnotte,
+  Gains récurrents, 10% de remise filleul, Filleuls,
+  Gagner des récompenses, Virements automatiques
+
+
+--------------------------------------------------------------
+6. CALL TO ACTION — Textes exacts des boutons principaux
+--------------------------------------------------------------
+
+BOUTONS LANDING PAGE (par ordre d'apparition) :
+  1. « Démarrer Gratuitement » ← CTA HERO PRINCIPAL (bouton orange gradient)
+  2. « Voir la Démo » (bouton outline)
+  3. « Je Veux Démarrer Maintenant » (mid-page, après "Comment ça marche")
+  4. « Choisir Diffusion » (bouton plan Diffusion)
+  5. « Démarrer avec Premium » (bouton plan Premium, le plus mis en avant)
+  6. « Choisir Assistant IA » (bouton plan Assistant)
+  7. « Démarrer Gratuitement Maintenant » ← CTA FINAL (section orange, bouton blanc)
+
+BOUTONS PAGE INSCRIPTION :
+  8. « Démarrer mon automatisation » ← BOUTON SUBMIT PRINCIPAL (avec flèche →)
+  9. « Vérifier le code » (étape OTP)
+
+BOUTONS PAGE PRICING (/pricing) :
+  10. « Commencer » (plan Diffusion)
+  11. « Essayer Gratuitement » (plan Bot IA — le plus mis en avant)
+  12. « Démarrer » (plan Business)
+
+BOUTON DASHBOARD :
+  13. « Passer Premium » (bouton upgrade pour trial)
+  14. « Passer au Premium » (variante)
+  15. « Connecter WhatsApp » (CTA carte dashboard)
+  16. « Créer mon instance » (lien)
+  17. « Lancer ma campagne » (lien)
+  18. « Découvrir le programme » (lien affiliation)
+  19. « Partager sur WhatsApp » (bouton vert, affiliation)
+
+SOUS LE CTA D'INSCRIPTION :
+  « Vos données sont sécurisées. Pas de carte bancaire requise. »
+
+GARANTIES CTA FINAL :
+  - « Sans carte bancaire »
+  - « Annulation en 1 clic »
+  - « Support 7j/7 »
+
+
+====================================================================
+  RÉCAPITULATIF — LES PHRASES LES PLUS PERCUTANTES POUR LE SCRIPT
+====================================================================
+
+ACCROCHE (1-5s) :
+  → « Transformez WhatsApp en Machine de Vente Automatique 24/7 »
+
+PROBLÈME (5-10s) :
+  → « Vous perdez des ventes la nuit et le week-end ? »
+  → « Vous répétez les mêmes réponses 100 fois par jour ? »
+
+SOLUTION IA (10-15s) :
+  → « Un Assistant IA Ultra-Intelligent qui répond 24/7 »
+  → « Uploadez votre catalogue, le bot vend pendant que vous dormez »
+
+SOLUTION DIFFUSION (15-20s) :
+  → « Campagnes de masse anti-spam à 1000+ contacts en un clic »
+  → « Programmez vos envois, NeoChat fait le reste »
+
+SOCIAL PROOF (20-25s) :
+  → « +500 entrepreneurs nous font confiance »
+  → « 50 000+ messages automatisés ce mois »
+
+CTA FINAL (25-30s) :
+  → « Démarrer Gratuitement » / « Démarrer Gratuitement Maintenant »
+  → « Essai gratuit 3 jours • Sans carte bancaire »
+  → « À partir de 5 000 FCFA/mois »
+
+TAGLINE :
+  → « NeoChat — Votre assistant WhatsApp intelligent »
+  → « Fait avec ❤️ pour l'Afrique »
+
+====================================================================

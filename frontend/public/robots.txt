@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /favicon.svg
+Allow: /favicon.png
+Allow: /favicon-96x96.png
+Allow: /favicon-144x144.png
+Allow: /favicon-192x192.png
+Allow: /apple-touch-icon.png
+Allow: /manifest.json

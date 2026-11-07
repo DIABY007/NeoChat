@@ -1,0 +1,70 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Next.js build output
+.next/
+out/
+build/
+dist/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env*.local
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Vercel
+.vercel
+
+# Uploads
+uploads/
+
+# Temporary / diagnostic scripts
+check_*.js
+check_*.ts
+NeoChatBackend/check_*.js
+NeoChatBackend/check_*.ts
+
+# OS Files
+.DS_Store
+*.pem
+*.tsbuildinfo
+
+# Incident reports, postmortems & confidential debug files
+postmortem*.md
+*postmortem*
+*.private.*
+RAPPORT-*.md
+TESTS-*.md
+DIAGNOSTIC-*.md
+SOLUTION-*.md
+FIX-*.md
+VERIFICATION-*.md
+CORRECTION-*.sql
+
+# Internal memory bank, notes, prompts & large media
+Banque de Memoire/
+Fichier MarkDown/
+prompt a donner*
+*.mp4
+*.mov
+
+# Evolution API debug notes
+evolution-api/PROBLEME_*.md
+evolution-api/SOLUTION_*.md
+evolution-api/RESULTAT_*.md
+evolution-api/RESUME_*.md

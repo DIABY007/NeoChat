@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hors ligne - NeoChat</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #fff5f0 0%, #fff 100%);
+      padding: 1rem;
+    }
+    
+    .offline-content {
+      text-align: center;
+      max-width: 400px;
+      padding: 2rem;
+      background: white;
+      border-radius: 16px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .offline-icon {
+      font-size: 5rem;
+      margin-bottom: 1.5rem;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+    
+    h1 {
+      color: #1e293b;
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+      font-weight: 700;
+    }
+    
+    p {
+      color: #64748b;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    
+    button {
+      background: linear-gradient(135deg, #f97316 0%, #fb923c 100%);
+      color: white;
+      border: none;
+      padding: 0.875rem 2rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(249, 115, 22, 0.3);
+    }
+    
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(249, 115, 22, 0.4);
+    }
+    
+    button:active {
+      transform: translateY(0);
+    }
+    
+    .status {
+      margin-top: 1.5rem;
+      padding: 0.75rem;
+      background: #fef3c7;
+      border-radius: 8px;
+      font-size: 0.875rem;
+      color: #92400e;
+    }
+  </style>
+</head>
+<body>
+  <div class="offline-content">
+    <div class="offline-icon">📡</div>
+    <h1>Vous êtes hors ligne</h1>
+    <p>Vérifiez votre connexion Internet et réessayez. NeoChat nécessite une connexion pour fonctionner.</p>
+    <button onclick="location.reload()">Réessayer</button>
+    <div class="status" id="status">
+      Vérification de la connexion...
+    </div>
+  </div>
+  
+  <script>
+    function updateStatus() {
+      const status = document.getElementById('status');
+      if (navigator.onLine) {
+        status.textContent = '✅ Connexion rétablie !';
+        status.style.background = '#d1fae5';
+        status.style.color = '#065f46';
+        setTimeout(() => location.reload(), 1000);
+      } else {
+        status.textContent = '❌ Toujours hors ligne';
+        status.style.background = '#fee2e2';
+        status.style.color = '#991b1b';
+      }
+    }
+    
+    window.addEventListener('online', updateStatus);
+    window.addEventListener('offline', updateStatus);
+    
+    setInterval(updateStatus, 3000);
+    updateStatus();
+  </script>
+</body>
+</html>

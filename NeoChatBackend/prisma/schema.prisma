@@ -1,0 +1,328 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+  extensions = [vector]
+}
+
+model User {
+  id            String         @id @default(uuid())
+  phone         String         @unique
+  firstName     String?
+  lastName      String?
+  otpCode       String?
+  otpExpiry     DateTime?
+  referralCode  String         @unique
+  referredBy    String?
+  walletBalance Float          @default(0)
+  paymentName         String?
+  paymentPhone        String?
+  paymentMethod       String?
+  paymentOtherMethod  String?
+  preferredCountry    String?        @default("bf")
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  
+  subscription  Subscription?
+  instances     Instance[]
+  documents     Document[]
+  affiliatePayments AffiliatePayment[]
+  campaigns     Campaign[]
+  scheduledStatuses ScheduledStatus[]
+  
+  @@index([phone])
+  @@index([referralCode])
+}
+
+model Subscription {
+  id             String    @id @default(uuid())
+  userId         String    @unique
+  status         Status    @default(TRIAL)
+  messageCount   Int       @default(0)
+  paymentCount   Int       @default(0)
+  maketouCartId  String?
+  trialEndsAt    DateTime
+  nextBillingAt  DateTime?
+  createdAt      DateTime  @default(now())
+  updatedAt      DateTime  @updatedAt
+  
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId])
+  @@index([status])
+}
+
+model Instance {
+  id              String             @id @default(uuid())
+  userId          String
+  instanceName    String             @unique
+  status          InstanceStatus     @default(DISCONNECTED)
+  difyAppId       String?
+  pairingCode     String?
+  systemPrompt    String?
+  triggerWord     String?
+  adminPhone      String?
+  isBotActive     Boolean            @default(false)
+  blacklist       String[]           @default([])
+  firstBotMessageAt DateTime?
+  noContextCount  Int                @default(0)
+  createdAt       DateTime           @default(now())
+  updatedAt       DateTime           @updatedAt
+  
+  user            User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  knowledgeDocs   KnowledgeDocument[]
+  scheduledStatuses ScheduledStatus[]
+  botGroups       BotGroup[]
+  messageActivity MessageActivity[]
+  
+  @@index([userId])
+  @@index([instanceName])
+}
+
+model BotGroup {
+  id              String   @id @default(uuid())
+  instanceId      String
+  whatsappGroupId String
+  groupName       String?
+  isActive        Boolean  @default(true)
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  instance        Instance @relation(fields: [instanceId], references: [id], onDelete: Cascade)
+
+  @@unique([instanceId, whatsappGroupId])
+  @@index([instanceId])
+}
+
+model KnowledgeDocument {
+  id          String   @id @default(uuid())
+  instanceId  String
+  name        String
+  type        DocumentType
+  content     String   @db.Text
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  
+  instance    Instance @relation(fields: [instanceId], references: [id], onDelete: Cascade)
+  
+  @@index([instanceId])
+}
+
+enum DocumentType {
+  PDF
+  TEXT
+}
+
+model Document {
+  id        String   @id @default(uuid())
+  userId    String
+  content   String
+  embedding Unsupported("vector(1536)")?
+  metadata  Json     @default("{}")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  
+  @@index([userId])
+}
+
+enum Status {
+  TRIAL
+  DIFFUSION
+  ASSISTANT
+  PREMIUM
+  EXPIRED
+}
+
+enum InstanceStatus {
+  DISCONNECTED
+  CONNECTING
+  CONNECTED
+}
+
+model AffiliatePayment {
+  id              String        @id @default(uuid())
+  userId          String
+  amount          Float
+  paymentMethod   String
+  paymentDetails  String?
+  status          PaymentStatus @default(PENDING)
+  processedBy     String?
+  processedAt     DateTime?
+  notes           String?
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+  
+  user            User          @relation(fields: [userId], references: [id])
+  
+  @@index([userId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+enum PaymentStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+  CANCELLED
+}
+
+enum CampaignStatus {
+  PENDING
+  PROCESSING
+  COMPLETED
+  FAILED
+  PAUSED
+}
+
+enum StatusType {
+  TEXT
+  IMAGE
+  VIDEO
+}
+
+enum ScheduledStatusState {
+  PENDING
+  POSTED
+  FAILED
+}
+
+model ScheduledStatus {
+  id              String               @id @default(uuid())
+  instanceId      String
+  userId          String
+  type            StatusType
+  content         String               @db.Text
+  localFilePath   String?
+  caption         String?
+  backgroundColor String?
+  scheduledAt     DateTime
+  status          ScheduledStatusState @default(PENDING)
+  createdAt       DateTime             @default(now())
+  updatedAt       DateTime             @updatedAt
+
+  instance        Instance             @relation(fields: [instanceId], references: [id], onDelete: Cascade)
+  user            User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([status])
+  @@index([scheduledAt])
+}
+
+model Campaign {
+  id              String         @id @default(uuid())
+  userId          String
+  instanceName    String
+  name            String
+  message         String         @db.Text
+  mediaUrl        String?
+  mediaType       String?
+  recipients      Json
+  scheduledAt     DateTime
+  status          CampaignStatus @default(PENDING)
+  processedCount  Int            @default(0)
+  totalCount      Int            @default(0)
+  createdAt       DateTime       @default(now())
+  updatedAt       DateTime       @updatedAt
+
+  user            User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([status])
+  @@index([scheduledAt])
+}
+
+enum MessageDirection {
+  INCOMING
+  OUTGOING
+}
+
+model MessageActivity {
+  id              String            @id @default(uuid())
+  instanceId      String
+  instanceName    String
+  direction       MessageDirection
+  senderPhone     String?
+  messageText     String            @db.Text
+  responseTimeMs  Int?
+  confidence      Float?
+  wasAnswered     Boolean           @default(true)
+  isGroupMessage  Boolean           @default(false)
+  groupId         String?
+  createdAt       DateTime          @default(now())
+
+  instance        Instance          @relation(fields: [instanceId], references: [id], onDelete: Cascade)
+
+  @@index([instanceId])
+  @@index([instanceName])
+  @@index([createdAt])
+  @@index([instanceName, createdAt])
+}
+
+model DashboardThemesDaily {
+  id          String   @id @default(uuid())
+  date        DateTime
+  themes      Json
+  messageCount Int     @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@unique([date])
+  @@index([date])
+}
+
+enum EntityStatus {
+  ACTIVE
+  ARCHIVED
+}
+
+enum AdminRole {
+  SUPER_ADMIN
+  COORDINATEUR
+  BGE
+}
+
+model AdminUser {
+  id          String       @id @default(uuid())
+  phoneNumber String       @unique @map("phone_number")
+  role        AdminRole    @default(COORDINATEUR)
+  name        String?
+  otpCode     String?      @map("otp_code")
+  otpExpiry   DateTime?    @map("otp_expiry")
+  status      EntityStatus @default(ACTIVE)
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+
+  annonces     AnnonceExpress[]
+
+  @@map("admin_users")
+  @@index([phoneNumber])
+  @@index([status])
+  @@index([otpCode])
+}
+
+model AnnonceExpress {
+  id        String       @id @default(uuid())
+  title     String?
+  type      String       @default("ANNONCE")
+  message   String       @db.Text
+  fileUrl   String?      @map("file_url")
+  createdBy String       @map("created_by")
+  expiresAt DateTime?    @map("expires_at")
+  status    EntityStatus @default(ACTIVE)
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt @default(now())
+
+  createdByAdmin AdminUser @relation(fields: [createdBy], references: [id])
+
+  @@map("annonces_express")
+  @@index([createdBy])
+  @@index([status])
+  @@index([expiresAt])
+}
